@@ -11,5 +11,6 @@ RUN        mkdir -p ${ZEPPELIN_HOME} && \
            mv ${ZEPPELIN_HOME}/zeppelin-${VERSION}-bin-all/* ${ZEPPELIN_HOME} && \
            rm -rf ${ZEPPELIN_HOME}/zeppelin-${VERSION}-bin-all && \
            rm -rf *.tgz
+RUN        cp ${ZEPPELIN_HOME}/conf/shiro.ini.template ${ZEPPELIN_HOME}/conf/shiro.ini
 WORKDIR    ${ZEPPELIN_HOME}
 CMD        ["./bin/zeppelin.sh"]
